@@ -20,7 +20,7 @@ if ! test -d /etc/sv/cloudpatron ; then
     mkdir /etc/sv/cloudpatron
     cat <<RUNIT >/etc/sv/cloudpatron/run
 #!/bin/sh
-exec /usr/bin/cloudpatron --http-host "${CLOUDPATRON_HTTP_HOST}" --backlink "${CLOUDPATRON_BACKLINK}"
+exec /usr/bin/cloudpatron --letsencrypt=false --http-host "${CLOUDPATRON_HTTP_HOST}" --backlink "${CLOUDPATRON_BACKLINK}"
 RUNIT
     chmod +x /etc/sv/cloudpatron/run
 
